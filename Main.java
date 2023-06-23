@@ -2,22 +2,13 @@ package Final;
 public class Main {
 
     public static void main(String[] args) {
-        Player player1 = new Player("Player 1");
-        Player player2 = new Player("Player 2");
+        Player player1 = new Player("Player 1", 1000); // balance inicial de 1000
+        Player player2 = new Player("Player 2", 1000); // balance inicial de 1000
 
-        player1.rollDice();
-        player2.rollDice();
+        Game game = new Game(player1, player2);
 
-        System.out.println(player1.getName() + " rolled: " + player1.getHand());
-        System.out.println(player2.getName() + " rolled: " + player2.getHand());
-
-        if (player1.getHand().compareTo(player2.getHand()) > 0) {
-            System.out.println(player1.getName() + " wins!");
-        } else if (player1.getHand().compareTo(player2.getHand()) < 0) {
-            System.out.println(player2.getName() + " wins!");
-        } else {
-            System.out.println("It's a tie!");
+        for (int i = 0; i < 10; i++) { // jugar 10 rondas
+            game.playRound();
         }
     }
 }
-

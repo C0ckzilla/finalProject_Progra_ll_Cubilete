@@ -35,6 +35,7 @@ public enum Hand {
         } else {
             hand = NOTHING;
         }
+    
 
         return hand;
     }

@@ -5,7 +5,7 @@ public class Die {
     private int value;
 
     public Die() {
-        roll();
+    
     }
 
     public void roll() {
