@@ -3,10 +3,10 @@ Repositorio con el objeto de desarrollar un Cubilete tipo Casino
 
 Dexcripción detallada de cada Clase creada (y el enum):
 
-1. *Die (Dado):* Esta clase representa un dado individual en el juego. Cada dado tiene un valor que se establece al lanzarlo. El método `roll()` genera un número aleatorio entre 1 y 6 para simular el lanzamiento de un dado.
+    Implementación de múltiples rondas: Modificar el código para que el juego se juegue en un número específico de rondas. Podríamos hacer esto en la clase Game, donde se maneja la lógica principal del juego.
 
-2. *Player (Jugador):* Esta clase representa a un jugador en el juego. Cada jugador tiene un nombre, una lista de dados, una mano (que es un tipo de `Hand`), una lista de valores de los dados en su mano y un saldo. Los jugadores pueden lanzar sus dados, lo que también actualiza su mano y los valores de los dados en su mano. También pueden verificar su saldo y si tienen suficiente saldo para hacer un lanzamiento.
+    Actualización del balance del jugador: Después de cada ronda, necesitaremos actualizar el balance del jugador en función de si ganaron o perdieron. Esto podría hacerse en la clase Player.
 
-3. *Hand (Mano):* Este es un enum que representa los diferentes tipos de manos posibles en el juego. Los tipos de manos son, en orden de menor a mayor: Nada, Pareja, Doble Pareja, Tercia, Escalera, Full, Póker, y Quintilla. Hay un método estático `evaluateHand()` que toma una lista de dados y devuelve el tipo de mano que representan esos dados.
+    Interacción con la base de datos: Necesitaremos implementar métodos para obtener el balance inicial del jugador de la base de datos y para actualizar este balance en la base de datos al final del juego. Esto podría hacerse en una nueva clase DatabaseManager o similar.
 
-Estas clases y enum trabajan juntas para simular un juego de Cubilete. Los jugadores lanzan sus dados, luego se evalúan sus manos y se compara el tipo de mano de cada jugador para determinar quién ganó.
+    Impresión del balance del jugador: Finalmente, necesitaremos modificar la salida del programa para que muestre el balance actual del jugador después de cada ronda. Esto podría hacerse en la clase Game o Player.
